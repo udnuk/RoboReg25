@@ -1,0 +1,259 @@
+<?xml version="1.0" ?>
+<robot name="arm_robot">
+    
+ 	<link name="base">
+		<visual>
+		    <origin xyz="0 0 0.0375" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.075" radius="0.2"/>
+			</geometry>
+			<material name="grey">
+	       		<color rgba="0.1 0.1 0.1 1.0"/>
+	     	</material>
+		</visual>	
+		<collision>
+			<origin xyz="0 0 0.0375" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.075" radius="0.2"/>
+			</geometry>
+		</collision>
+    	<inertial>
+      		<mass value="5.0" />
+      		<origin xyz="0 0 0.0375" />
+      		<inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.1" />
+    	</inertial>
+	</link>
+
+ 	<link name="rotary_adapter">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.03" radius="0.09"/>
+			</geometry>
+			<material name="red">
+	       		<color rgba="0.9 0.1 0.1 1.0"/>
+	     	</material>
+		</visual>	
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.03" radius="0.09"/>
+			</geometry>
+		</collision>
+		<inertial>
+      		<mass value="1.0" />
+      		<origin xyz="0 0 0" />
+      		<inertia ixx="0.002" ixy="0" ixz="0" iyy="0.002" iyz="0" izz="0.004" />
+    	</inertial>
+	</link>
+
+	<link name="shoulder_pivot_housing">
+        <visual>
+          <geometry>
+            <sphere radius="0.05"/>
+          </geometry>
+          <material name="blue">
+            <color rgba="0.1 0.1 0.9 1"/>
+          </material>
+        </visual>
+		<collision>
+			<geometry>
+            	<sphere radius="0.05"/>
+        	</geometry>
+		</collision>
+		<inertial>
+      		<mass value="0.3" />
+      		<origin xyz="0 0 0" />
+      		<inertia ixx="0.0003" ixy="0" ixz="0" iyy="0.0003" iyz="0" izz="0.0003" />
+    	</inertial>
+	</link>
+
+ 	<link name="upper_arm">
+		<visual>
+		    <origin xyz="0 0 0.45" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.9" radius="0.025"/>
+			</geometry>
+			<material name="white">
+	       		<color rgba="0.9 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0.45" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.9" radius="0.025"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.3" />
+			<origin xyz="0 0 0.45" />
+			<inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.0001" />
+    	</inertial>
+	</link>
+
+ 	<link name="forearm">
+		<visual>
+		    <origin xyz="0 0 0.375" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.75" radius="0.025"/>
+			</geometry>
+			<material name="white">
+	       		<color rgba="0.9 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0.375" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.75" radius="0.025"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.2" />
+			<origin xyz="0 0 0.375" />
+			<inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.00006" />
+    	</inertial>		
+	</link>
+
+ 	<link name="wrist_arm">
+		<visual>
+		    <origin xyz="0 0 0.225" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.45" radius="0.025"/>
+			</geometry>
+			<material name="white">
+	       		<color rgba="0.9 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>	
+		<collision>
+			<origin xyz="0 0 0.225" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.45" radius="0.025"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.1" />
+			<origin xyz="0 0 0.225" />
+			<inertia ixx="0.005" ixy="0" ixz="0" iyy="0.005" iyz="0" izz="0.00003" />
+    	</inertial>
+	</link>
+
+	<link name="elbow_pivot_housing">
+        <visual>
+          <geometry>
+            <sphere radius="0.05"/>
+          </geometry>
+          <material name="blue">
+            <color rgba="0.1 0.1 1 1"/>
+          </material>
+        </visual>
+		<collision>
+			<geometry>
+            	<sphere radius="0.05"/>
+        	</geometry>
+		</collision>
+		<inertial>
+      		<mass value="0.3" />
+      		<origin xyz="0 0 0" />
+      		<inertia ixx="0.0003" ixy="0" ixz="0" iyy="0.0003" iyz="0" izz="0.0003" />
+    	</inertial>
+	</link>
+
+	<link name="wrist_pivot_housing">
+        <visual>
+          <geometry>
+            <sphere radius="0.05"/>
+          </geometry>
+          <material name="blue">
+            <color rgba="0.1 0.1 1 1"/>
+          </material>
+        </visual>
+		<collision>
+			<geometry>
+            	<sphere radius="0.05"/>
+        	</geometry>
+		</collision>
+		<inertial>
+      		<mass value="0.3" />
+      		<origin xyz="0 0 0" />
+      		<inertia ixx="0.0003" ixy="0" ixz="0" iyy="0.0003" iyz="0" izz="0.0003" />
+    	</inertial>
+	</link>
+
+	<link name="end_effector_housing">
+        <visual>
+          <geometry>
+            <sphere radius="0.05"/>
+          </geometry>
+          <material name="red">
+            <color rgba="1 0.1 0.1 1"/>
+          </material>
+        </visual>
+		<collision>
+			<geometry>
+            	<sphere radius="0.05"/>
+        	</geometry>
+		</collision>
+		<inertial>
+      		<mass value="0.3" />
+      		<origin xyz="0 0 0" />
+      		<inertia ixx="0.0003" ixy="0" ixz="0" iyy="0.0003" iyz="0" izz="0.0003" />
+    	</inertial>
+	</link>
+
+	<joint name="base_swivel" type="continuous">
+    	<parent link="base"/>
+    	<child link="rotary_adapter"/>
+    	<origin xyz="0 0 0.09" rpy="0 0 0"/>
+      	<axis xyz="0 0 1"/>
+	</joint>
+
+	<joint name="shoulder_adapter" type="fixed">
+    	<parent link="rotary_adapter"/>
+    	<child link="shoulder_pivot_housing"/>
+    	<origin xyz="0 0 0.025" rpy="0 0 0"/>     	
+	</joint>
+
+	<joint name="shoulder_pivot" type="revolute">
+    	<parent link="shoulder_pivot_housing"/>
+    	<child link="upper_arm"/>
+    	<origin xyz="0 0 0" rpy="0 0 0"/>
+      	<axis xyz="0 1 0"/>
+      	<limit lower="-1.57" upper="1.57"/>
+	</joint>
+
+	<joint name="elbow_adapter" type="fixed">
+    	<parent link="upper_arm"/>
+    	<child link="elbow_pivot_housing"/>
+    	<origin xyz="0 0 0.9" rpy="0 0 0"/>
+	</joint>
+
+	<joint name="elbow_pivot" type="revolute">
+    	<parent link="elbow_pivot_housing"/>
+    	<child link="forearm"/>
+    	<origin xyz="0 0 0" rpy="0 1.57 0"/>
+      	<axis xyz="0 1 0"/>
+      	<limit lower="-4.71" upper="1.57"/>
+	</joint>
+
+	<joint name="wrist_rotator" type="revolute">
+    	<parent link="forearm"/>
+    	<child link="wrist_pivot_housing"/>
+    	<origin xyz="0 0 0.75" rpy="0 0 0"/>
+      	<axis xyz="0 0 1"/>
+      	<limit lower="-3.14" upper="3.14"/>
+	</joint>
+
+	<joint name="end_effector_adapter" type="fixed">
+    	<parent link="wrist_arm"/>
+    	<child link="end_effector_housing"/>
+    	<origin xyz="0 0 0.45" rpy="0 0 0"/>
+	</joint>
+
+	<joint name="wrist_pivot" type="revolute">
+    	<parent link="wrist_pivot_housing"/>
+    	<child link="wrist_arm"/>
+    	<origin xyz="0 0 0" rpy="0 0 0"/>
+      	<axis xyz="1 0 0"/>
+      	<limit lower="-1.57" upper="1.57"/>
+	</joint>
+</robot>
